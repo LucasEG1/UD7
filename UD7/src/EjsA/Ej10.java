@@ -15,7 +15,7 @@ public class Ej10 {
                 a[cuantos] = leer.nextDouble();
                 cuantos++;
             } catch (InputMismatchException e) {
-                System.out.println("No es un numero");
+                System.out.println("No es un numero By: luquita");
                 leer.nextLine();
             }
         } while (cuantos < a.length);

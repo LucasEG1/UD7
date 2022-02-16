@@ -15,10 +15,10 @@ public class Ej11 {
             v[i] = (int)(Math.random()*11);
         }
         
-        int pide;
+        int pide = 0;
         do {
-            pide = leer.nextInt();
             try {
+                pide = leer.nextInt();
                 System.out.println(v[pide]);
                 
             } catch (IndexOutOfBoundsException e) {
