@@ -1,24 +1,64 @@
 
 package EntregableUD7;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Func {
     
+    public static int pedirInt(){
+        Scanner leer = new Scanner(System.in);
+        int i = -1;
+        try {
+            i = leer.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Introduce un número entero.");
+        }
+        return i;
+    }
+    
+    public static int pedirIntHasta(){
+        Scanner leer = new Scanner(System.in);
+        boolean valido = false;
+        int i = -1;
+        do {            
+            try {
+            i = leer.nextInt();
+            valido = true;
+        } catch (InputMismatchException e) {
+            System.out.println("Introduce un número entero.");
+        }
+        } while (valido == true);
+        return i;
+    }
+    
+    public static double pedirDouble(){
+        Scanner leer = new Scanner(System.in);
+        double d = -1;
+        try {
+            System.out.print("Cantidad: ");
+            d = leer.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Introduce un número 'double'.");
+        }
+        return d;
+    }
+    
+    
     public static int rango(int min, int max) throws CuentaException{
 
-        Scanner in = new Scanner(System.in);
         int valor;
 
         do {
-            valor = in.nextInt();
+            valor = pedirInt();
             if (valor < min || valor > max) {
-                throw new CuentaException("Entrada inválida. Introduce un número entre " + Integer.toString(min) + " y " + Integer.toString(max));
+                throw new CuentaException("Entrada inválida. Introduce un número entre " + min + " y " + max);
             }
         } while (valor < min || valor > max);
 
         return valor;
     }
+    
     public static int menu() throws CuentaException{
         System.out.println("1. Ver cuentas");
         System.out.println("2. Ingresar dinero");
@@ -42,10 +82,5 @@ public class Func {
         String s = in.nextLine();
         return s;
     }
-    public static double pedirDouble(){
-        Scanner leer = new Scanner(System.in);
-        System.out.print("\nCantidad a ingresar: ");
-        double d = leer.nextDouble();
-        return d;
-    }
+    
 }
