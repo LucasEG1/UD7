@@ -17,14 +17,14 @@ public class Func {
         return i;
     }
     
-    public static double pedirDouble(){
+    public static double pedirDouble() throws CuentaException {
         Scanner leer = new Scanner(System.in);
         double d = -1;
         try {
             System.out.print("Cantidad: ");
             d = leer.nextDouble();
         } catch (InputMismatchException e) {
-            System.out.println("Introduce un número 'double'.");
+            throw new CuentaException("Introduce un número 'double'.");
         }
         return d;
     }

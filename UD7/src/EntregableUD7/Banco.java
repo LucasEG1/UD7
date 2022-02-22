@@ -72,7 +72,7 @@ public class Banco {
             System.out.println("Cuenta eliminada exitosamente.");
         }
     }
-
+    
     public Banco buscarCuenta() throws CuentaException {
         Scanner leer = new Scanner(System.in);
         System.out.println("Qué nombre buscas?");

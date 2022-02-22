@@ -5,7 +5,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
-
+ 
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         Banco banco = new Banco(100);
@@ -17,10 +17,11 @@ public class Main {
                     opcion = Func.menu();
                     valido = true;
                 } catch (CuentaException e) {
-                    e.getMessage();
+                    System.out.println(e.getMessage());
+                    valido = false;
                 } catch (InputMismatchException e){
                     System.err.println("Introduce un número entero.");
-                    leer.nextLine();
+                    valido = false;
                 }
             } while (valido != true);
             
@@ -90,7 +91,7 @@ public class Main {
                         banco.eliminarCuenta(banco.elegirPosDeCuenta());
                     } catch (CuentaException e) {
                         System.out.println(e.getMessage());
-                        System.out.println("La operación no se ha realizado.");
+                        System.out.println("Como no hay cuentas, no se puede eliminar nada.");
                     }
                     break;
                 case 7:
