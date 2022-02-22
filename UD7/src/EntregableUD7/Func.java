@@ -17,21 +17,6 @@ public class Func {
         return i;
     }
     
-    public static int pedirIntHasta(){
-        Scanner leer = new Scanner(System.in);
-        boolean valido = false;
-        int i = -1;
-        do {            
-            try {
-            i = leer.nextInt();
-            valido = true;
-        } catch (InputMismatchException e) {
-            System.out.println("Introduce un número entero.");
-        }
-        } while (valido == true);
-        return i;
-    }
-    
     public static double pedirDouble(){
         Scanner leer = new Scanner(System.in);
         double d = -1;

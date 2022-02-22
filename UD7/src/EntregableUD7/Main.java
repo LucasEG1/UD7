@@ -2,10 +2,12 @@
 package EntregableUD7;
 
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        Scanner leer = new Scanner(System.in);
         Banco banco = new Banco(100);
         int opcion = 0;
         boolean valido = false;
@@ -18,6 +20,7 @@ public class Main {
                     e.getMessage();
                 } catch (InputMismatchException e){
                     System.err.println("Introduce un número entero.");
+                    leer.nextLine();
                 }
             } while (valido != true);
             

@@ -85,11 +85,12 @@ public class Banco {
 
             if (cuentas[i].getNombre().toUpperCase().contains(busqueda.toUpperCase())) {
                 cuantosEncontrados++;
-                be.agregarCuenta(cuentas[i]);
+                System.out.print(cuantosEncontrados + " ");
+                cuentas[i].verCuenta();
             }
         }
         if (cuantosEncontrados == 0) {
-            System.out.println("No hay cuentas con mora.");
+            System.out.println("No hay cuentas.");
         }
         return be;
     }
